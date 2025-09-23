@@ -45,7 +45,7 @@ DF2K/
           |- ...
           |- 002634.png
 ```
-- **Validation Datasets**: [OneDrive](https://1drv.ms/u/c/d7ca46a8d1a0a9a4/EQIRDg_3aeVGhUX2cPDWkKIBf7O5QeJy9mR2_jB-zGeFqw?e=pjJfA5) / [BaiduDisk](https://pan.baidu.com/s/1SH__3zTCiAkn3poudqPzcQ?pwd=viaa).
+- **Validation Dataset**: [OneDrive](https://1drv.ms/u/c/d7ca46a8d1a0a9a4/EQIRDg_3aeVGhUX2cPDWkKIBf7O5QeJy9mR2_jB-zGeFqw?e=pjJfA5) / [BaiduDisk](https://pan.baidu.com/s/1SH__3zTCiAkn3poudqPzcQ?pwd=viaa).
 ```
 simulated_spike_data/
   |- val/  # validation during training
