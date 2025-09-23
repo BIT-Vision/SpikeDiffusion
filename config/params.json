@@ -1,0 +1,103 @@
+{
+	"name": "spike_diffusion",
+	"device": "cuda",
+	"gpu_ids": "0",
+	"seed": 0,
+	"experiment": {
+		"use_rm_dark_trunc_A_mask_con": true,
+		"use_dark_con": true,
+		"use_spike_density_value": true,
+        "fpn_rand": true,
+		"use_loss_lpips": true,
+		"loss_diff_factor": 1,
+		"loss_lpips_factor": 2
+	},
+	"diffusion": {
+		"algorithm": "Aab",
+		"dark_add_trunc": true,
+		"k": 0.1,
+		"loss_type": "l1",
+		"n_timestep": 6,
+		"Alpha_schedule": {
+			"schedule": "exp",
+			"p": 6
+		},
+		"alpha_schedule": {
+			"schedule": "resshift_sqrt",
+			"p": 3
+		},
+		"beta_schedule": {
+			"schedule": "resshift_sqrt",
+			"p": 0.005
+		},
+		"gamma_schedule": {
+			"schedule": "resshift_sqrt",
+			"p": 0.005
+		}
+	},
+	"unet": {
+		"in_channel": 3,
+		"out_channel": 1,
+		"inner_channel": 64,
+		"norm_groups": 32,
+		"channel_multiplier": [1, 2, 4, 8],
+		"res_blocks": 1,
+		"attn_ind": [3],
+		"dropout": 0.2
+	},
+	"train": {
+		"start_iter": 0,
+		"warmup_iters": 0,
+		"n_iter": 1000000,
+		"lr": 0.0001,
+		"min_lr": 0.0001,
+		"clip_grad": 3
+	},
+	"path": {
+		"model_checkpoint_path": "checkpoint.pth",  //  null for training
+		"optimizer_checkpoint_path": null,
+		"output_dir": "output",
+		"checkpoint_dir": "checkpoint",
+		"log_dir": "log",
+		"vis_train_dir": "vis_train",
+		"vis_val_sim_dir": "vis_val_sim",
+		"vis_val_real_dir": "vis_val_real"
+	},
+	"freq": {
+		"print_freq": 1,
+		"train_log_freq": 1,
+		"val_freq": 1,
+		"vis_train_freq": 1,
+		"vis_val_freq": 1,
+		"save_checkpoint_freq": 1
+	},
+	"dataset": {
+		"dataset_train_root": "DF2K/train",
+		"dataset_val_root": "simulated_spike_data/val",
+		"dataset_val_paper_root": "simulated_spike_data/val_paper",
+		"dataset_real_root": "real_low_light_spike_data/data",
+		"dark_data_path": "real_low_light_spike_data/params/0.npy",
+		"medium_data_path": "real_low_light_spike_data/params/198.npy",
+		"light_data_path": "real_low_light_spike_data/params/423.npy",
+		"dark_lux": 0,
+		"medium_lux": 198,
+		"light_lux": 423,
+		"height": 250,
+		"width": 400,
+		"org_width": 416,
+		"correct_pix_x": 2,
+		"correct_pix_y": 2,
+		"threshold": 255,
+		"light_scale": 1.5,
+		"window_length": 128,
+		"scale_factor": 10,
+		"n": 120,
+		"gamma_scale_range1": [0.6, 1.0],
+		"gamma_scale_range2": [0.6, 1.0]
+	},
+	"dataloader": {
+		"batch_size": 2,
+		"num_workers": 0,
+		"persistent_workers": false
+	}
+}
