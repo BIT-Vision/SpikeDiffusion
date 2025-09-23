@@ -32,7 +32,7 @@ pip install -r requirements.txt
 ```
 
 ## 🗂️Datasets
-- **Training Dataset**: Please download DF2K ([DIV2K](http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip), [Flickr2K_HR](https://cv.snu.ac.kr/research/EDSR/Flickr2K.tar)) and organize as follow:
+- **Training Dataset**: Please download DF2K ([DIV2K_train_HR](http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip), [Flickr2K_HR](https://cv.snu.ac.kr/research/EDSR/Flickr2K.tar)) and organize as follow:
 ```
 DF2K/
   |- train/
