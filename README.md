@@ -74,8 +74,7 @@ real_low_light_spike_data/
 ```
 "dataset": {
 	"dataset_train_root": "DF2K/train",
-	"dataset_val_root": "simulated_spike_data/val",
-	"dataset_val_paper_root": "simulated_spike_data/val_paper",
+	"dataset_val_root": "simulated_spike_data/val",  // or "simulated_spike_data/val_paper"
 	"dataset_real_root": "real_low_light_spike_data/data",
 	"dark_data_path": "real_low_light_spike_data/params/0.npy",
 	"medium_data_path": "real_low_light_spike_data/params/198.npy",
