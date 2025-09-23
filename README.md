@@ -18,7 +18,7 @@ Experimental results demonstrate that our method significantly outperforms exist
 
 ## ⚙️Reqirements
 - python=3.10
-- pytorch=2.4.1
+- pytorch=2.4.0
 - tensorboard
 - lpips
 - pyiqa
